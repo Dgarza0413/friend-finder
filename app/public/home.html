@@ -10,8 +10,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <title>Home</title>
 </head>
+<style>
+    img {
+        height: 300px;
+        width: 100%;
+    }
+</style>
 
 <body>
     <div class="container">
@@ -24,16 +32,81 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Sign Up</a>
-                    <a class="nav-item nav-link" href="#">Sign In</a>
+                    <a class="nav-item nav-link float-right" href="#">Sign Up</a>
+                    <a class="nav-item nav-link float-left" href="/signin">Sign In</a>
                 </div>
             </div>
         </nav>
         <div class="jumbotron">
-            <h1>This is the landing page</h1>
+            <h1>Friend Finder<i class="fas fa-user"></i></h1>
+            <h3>Because we all get by with a little help from friends</h3>
+            <a href="/survey">To the survey</a>
+            <div class="current-membership"></div>
+        </div>
+        <h3>testimony</h3>
+        <div class="row p-4">
+            <div class="col-4">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo exercitationem aperiam eius aliquam
+                    in, quos vel maiores distinctio accusamus minus labore expedita voluptate tempore natus saepe
+                    consequuntur excepturi dolores quae.</p>
+                <p>- lorum</p>
+                <p>lorum, texas</p>
+            </div>
+            <div class="col-4">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo exercitationem aperiam eius aliquam
+                    in, quos vel maiores distinctio accusamus minus labore expedita voluptate tempore natus saepe
+                    consequuntur excepturi dolores quae.</p>
+                <p>- lorum</p>
+                <p>lorum, california</p>
+
+            </div>
+            <div class="col-4">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo exercitationem aperiam eius aliquam
+                    in, quos vel maiores distinctio accusamus minus labore expedita voluptate tempore natus saepe
+                    consequuntur excepturi dolores quae.</p>
+                <p>- lorum</p>
+                <p>lorum, utah</p>
+            </div>
+        </div>
+        <br>
+        <div class="container px-5">
+            <div class="row mb-3">
+                <div class="col-5"><img
+                        src="https://images.unsplash.com/photo-1505765052322-75804bb2e5f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2240&q=80"
+                        alt=""></div>
+                <div class="col-7"><img
+                        src="https://images.unsplash.com/photo-1490723186985-6d7672633c86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
+                        alt=""></div>
+            </div>
+            <div class="row my-4 px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus minus
+                voluptatem
+                inventore ratione itaque quod natus sunt eligendi doloribus recusandae, harum quos ad delectus commodi
+                atque! Nulla eius sapiente facere.</div>
+            <div class="row">
+                <div class="col-7"><img
+                        src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80"
+                        alt=""></div>
+                <div class="col-5"><img
+                        src="https://images.unsplash.com/photo-1511311219972-4df5faba0fd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
+                        alt=""></div>
+            </div>
         </div>
     </div>
-    <a href="/survey">To the survey</a>
+    <div class="container-fluid mt-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, culpa voluptas quam vitae facilis veniam
+        laboriosam, ad molestias architecto earum doloremque rerum dicta debitis nulla aspernatur autem, eos expedita!
+        Beatae?
+        <div class="jumbotron m-0">footer</div>
+    </div>
+
+
+    <script>
+        $.get("/api/friends", function (data) {
+            console.log(data.length)
+        })
+        $("current-membership").append(data.length)
+    </script>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
