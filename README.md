@@ -7,7 +7,7 @@ We will use express to handle client-side requests to respond with a matched per
 # concept review/questions
 Reviewing the capabilities of node we now understand that express is a library comprised of nodes own. We use the key topics of http POST requests, GET requests, routing, and postman testing environments to handle these operations made by the client.
 
-1. what is routing
+1. what is routing?
 * routing is the handling of client-side actions by responding to requests with application endpoints/URL's
 
 2. how does the request-response pattern work
@@ -26,6 +26,9 @@ Our server.js file requires two corresponding js files that handle either the ap
 We then conclude the file with listening the listen method that express provides to us for connections on specified hosts and ports
 
 # about .html files
+Our .html files are static files that are requested using the `res.sendFile(path.join(__dirname, <routename>))` 
+
+survey.html contains the bulk of the logic used to return our matched friend using the input data from forms that then calculates the difference and returns the least different friend match.
 
 
 
