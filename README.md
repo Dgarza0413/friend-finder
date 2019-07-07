@@ -17,4 +17,15 @@ Reviewing the capabilities of node we now understand that express is a library c
 * The http method sends data to the server that is comprised of, typically, HTML form inputs
 
 # about server.js
+Our server uses the express package to handle our post and get methods as well as the rest of the dependencies such as `var path = require("path")` that is required from node to serve our static files.
+
+We include `app.use` to handle our middleware that responds to, in this case, routes that contain json data and parses urlencoded requests
+
+Our server.js file requires two corresponding js files that handle either the api routing or html routing.
+
+We then conclude the file with listening the listen method that express provides to us for connections on specified hosts and ports
+
+# about .html files
+
+
 
