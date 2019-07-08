@@ -246,42 +246,39 @@
             }
             var bestMatch = {
                 name: '',
-                difference: 1000
+                difference: Infinity
             }
 
-            if (name === "" || picture === "" || textarea === "") {
-                console.log("validate fields")
+            // if (name === "" || picture === "" || textarea === "") {
+            //     console.log("validate fields")
 
-                $.post("/api/friends", questionsArr)
-                    .then(function (data) {
-                        // $(".user-body").empty();
-                        // $(".user-body").append(questionsArr.name)
-                        // $(".user-body").append(picture)
-                    });
+            $.post("/api/friends", questionsArr)
+                .then(function (data) {
+                });
 
-                $.get("/api/friends", function (data) {
-                    for (var i = 0; i < data.length - 1; i++) {
-                        var difference = 0;
-                        for (var j = 0; j < data[i].scores.length; j++) {
-                            difference += Math.abs(data[i].scores[j] - questionsArr.scores[j])
-                            if (j === (data[i].scores.length - 1)) {
-                                if (bestMatch.difference > difference) {
-                                    bestMatch.difference = difference
-                                    bestMatch.name = data[i].name
-                                    bestMatch.photo = data[i].photo
-                                    bestMatch.message = data[i].message
-                                }
+            $.get("/api/friends", function (data) {
+                for (var i = 0; i < data.length - 1; i++) {
+                    var difference = 0;
+                    for (var j = 0; j < data[i].scores.length; j++) {
+                        difference += Math.abs(data[i].scores[j] - questionsArr.scores[j])
+                        if (j === (data[i].scores.length - 1)) {
+                            if (bestMatch.difference > difference) {
+                                bestMatch.difference = difference
+                                bestMatch.name = data[i].name
+                                bestMatch.photo = data[i].photo
+                                bestMatch.message = data[i].message
                             }
                         }
                     }
-                    console.log(bestMatch)
-                    $(".matched-name").text(bestMatch.name)
-                    $(".matched-msg").text(bestMatch.message)
-                    $(".matched-body").empty()
-                    $(".matched-body").append("<img src=" + bestMatch.photo + ">")
-                })
+                }
+                console.log(bestMatch)
+                $(".matched-name").text(bestMatch.name)
+                $(".matched-msg").text(bestMatch.message)
+                $(".matched-body").empty()
+                $(".matched-body").append("<img src=" + bestMatch.photo + ">")
+            })
 
-            }
+            // }
 
         });
     </script>
