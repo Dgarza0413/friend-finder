@@ -249,9 +249,6 @@
                 difference: Infinity
             }
 
-            // if (name === "" || picture === "" || textarea === "") {
-            //     console.log("validate fields")
-
             $.post("/api/friends", questionsArr)
                 .then(function (data) {
                 });
@@ -277,9 +274,6 @@
                 $(".matched-body").empty()
                 $(".matched-body").append("<img src=" + bestMatch.photo + ">")
             })
-
-            // }
-
         });
     </script>
 
