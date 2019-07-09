@@ -4,7 +4,9 @@
   "description": "A friend finder that is compatibility -based that uses express that takes in results from surveys and compares them to the answers of the other users.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
